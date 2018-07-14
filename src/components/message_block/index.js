@@ -1,4 +1,7 @@
 import * as React from "react";
+import { Divider } from "components/divider";
+import { MyMessage } from "components/my_message";
+import { TheirMessage } from "components/their_message";
 
 export const MessageBlock = ({
   date,
@@ -10,27 +13,14 @@ export const MessageBlock = ({
   startTime
 }) => (
   <div>
-    <hr />
-    <span>{divisorDate}</span>
-    <div>
-      <span>
-        .
-        <span>{sentTime}</span>
-      </span>
-      <i>Face</i>
-    </div>
-    <div>
-      <i>Face</i>
-      <span>
-        DPMK, a.s.<br />
-        SMS prestupny CL 0,80<br />
-        EUR<br />
-        Platnost od {date}
-        <br />
-        {startTime} do {endTime} hod.<br />
-        {messageHash}
-        <span>{receivedTime}</span>
-      </span>
-    </div>
+    <Divider date={divisorDate} />
+    <MyMessage sentTime={sentTime} />
+    <TheirMessage
+      date={date}
+      endTime={endTime}
+      messageHash={messageHash}
+      receivedTime={receivedTime}
+      startTime={startTime}
+    />
   </div>
 );

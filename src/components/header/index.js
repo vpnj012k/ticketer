@@ -1,13 +1,11 @@
 import * as React from "react";
+import header from "assets/header.png";
 
-export const Header = () => (
-  <header>
-    <i>{"<-"}</i>
-    1166
-    <span>
-      <i>Call</i>
-      <i>Delete</i>
-      <i>More</i>
-    </span>
-  </header>
-);
+const headerStyle = {
+  width: "100%",
+  position: "fixed",
+  top: 0,
+  zIndex: 2
+};
+
+export const Header = () => <img src={header} alt="" style={headerStyle} />;

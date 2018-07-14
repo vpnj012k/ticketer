@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "moment": "^2.22.2",
-    "randexp": "^0.4.9",
+    "randexp": "^0.4.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
