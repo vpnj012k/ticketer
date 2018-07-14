@@ -17,17 +17,35 @@ const messagesWrapperStyle = {
 class App extends Component {
   constructor() {
     super();
-    this.fakeTimes = generateFakeTimes().map(fakeTime => ({
+    this.state = {
+      fakeTimes: this.createFakeTimes()
+    };
+    this.touchTimeout = null;
+    window.addEventListener("focus", this.refreshMessages);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("focus", this.refreshMessages);
+  }
+
+  refreshMessages = () => {
+    this.setState({
+      fakeTimes: this.createFakeTimes()
+    });
+  };
+
+  createFakeTimes = () =>
+    generateFakeTimes().map(fakeTime => ({
       ...fakeTime,
       messageHash: createMessageHash()
     }));
-  }
+
   render() {
     return (
       <Fragment>
         <Header />
         <div style={messagesWrapperStyle}>
-          {this.fakeTimes.map(fakeTime => (
+          {this.state.fakeTimes.map(fakeTime => (
             <MessageBlock {...fakeTime} key={fakeTime.messageHash} />
           ))}
         </div>
