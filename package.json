@@ -4,12 +4,12 @@
   "private": true,
   "homepage": "https://varholak-peter.github.io/ticketer",
   "dependencies": {
-    "gh-pages": "^1.2.0",
+    "gh-pages": "^5.0.0",
     "moment": "^2.22.2",
     "randexp": "^0.4.0",
-    "react": "^16.4.1",
+    "react": "^16.5.0",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "5.0.0"
   },
   "scripts": {
     "predeploy": "npm run build",
